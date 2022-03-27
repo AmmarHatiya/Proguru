@@ -30,12 +30,12 @@
                 auth.login(this.username, this.password, (res) => {
                     if (res.auth){
                         //Login succesful, go to home page.
-                        console.log('Loggin success');
+                        console.log('Login success');
                         this.$router.replace('/');
                     } else{
                         //Login failed.
-                        console.log('Loggin failed');
-                        this.errorMessage = "Loggin failed";
+                        console.log('Login failed');
+                        this.errorMessage = "Login failed";
                     }
                 })
             }

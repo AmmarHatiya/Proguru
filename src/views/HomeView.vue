@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <H1> This is home page</H1>
+    <BootstrapCard />
     
   </div>
 </template>
@@ -9,8 +9,13 @@
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
 
+import BootstrapCard from '../components/BootstrapCard.vue'
+
 export default {
   name: 'HomeView',
+  components:{
+    BootstrapCard
+  }
   //components: {
   //  HelloWorld
   //}
