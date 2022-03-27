@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ContactsView from '../views/ContactsView.vue'
+
 const routes = [
   {
     path: '/',
