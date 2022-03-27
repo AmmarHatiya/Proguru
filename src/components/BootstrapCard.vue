@@ -1,6 +1,6 @@
 <template>
         <div class="card-group">
-    <div class="card">
+    <div class="card" @click="toBash">
         <img class="card-img-top" src="../assets/placeholder.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">Bash (Naida)</h5>
@@ -31,6 +31,11 @@
 <script>
 
 export default {
-    name:'BootstrapCard'
+    name:'BootstrapCard',
+    methods:{
+        toBash(){
+            this.$router.replace('/bash');
+        }
+    }
 }
 </script>
