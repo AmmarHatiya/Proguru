@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ContactsView from '../views/ContactsView.vue'
+import BashView from '../views/BashView.vue'
+
 const routes = [
   {
     path: '/',
@@ -27,6 +29,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/bash',
+    name: 'bash',
+    component: BashView
   }
 ]
 
