@@ -4,6 +4,10 @@ import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import BashView from '../views/BashView.vue'
+import DataTypesView from '../views/DataTypesView.vue'
+import SequenceView from '../views/SequenceView.vue'
+import NumericView from '../views/NumericView.vue'
+import StringView from '../views/StringView.vue'
 
 const routes = [
   {
@@ -34,6 +38,26 @@ const routes = [
     path: '/bash',
     name: 'bash',
     component: BashView
+  },
+  {
+    path: '/datatypes',
+    name: 'datatypes',
+    component: DataTypesView
+  },
+  {
+    path: '/datatypes/strings',
+    name: 'strings',
+    component: StringView
+  },
+  {
+    path: '/datatypes/numeric',
+    name: 'numeric',
+    component: NumericView
+  },
+  {
+    path: '/datatypes/sequence',
+    name: 'sequence',
+    component: SequenceView
   }
 ]
 
