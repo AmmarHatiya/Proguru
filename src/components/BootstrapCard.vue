@@ -16,10 +16,10 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card">
+    <div class="card" @click="toDataTypes">
         <img class="card-img-top" src="../assets/placeholder.png" alt="Card image cap">
         <div class="card-body">
-        <h5 class="card-title">Python (Ammar)</h5>
+        <h5 class="card-title">Data Types (Ammar)</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
@@ -35,6 +35,9 @@ export default {
     methods:{
         toBash(){
             this.$router.replace('/bash');
+        },
+        toDataTypes(){
+            this.$router.replace('/datatypes');
         }
     }
 }
