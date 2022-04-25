@@ -78,7 +78,7 @@
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <!-- <div id="quiz">
+         <!-- <div id="quiz">
           <form>
             <h5>A string is an ordered sequence of _____.</h5>
             <div class="form-group" id="knowledgeCheck1">
@@ -94,36 +94,8 @@
                   for="exampleCheck1"
                   >Characters</label
                 >
-              </div>
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck2"
-                />
-                <label
-                  style="margin-left: -700px"
-                  class="form-check-label"
-                  for="exampleCheck2"
-                  >Integers</label
-                >
-              </div>
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck3"
-                />
-                <label
-                  style="margin-left: -700px"
-                  class="form-check-label"
-                  for="exampleCheck3"
-                  >Pythons</label
-                >
-              </div>
-            </div>
-          </form>
-        </div> -->
+              </div> -->
+      
         <div id="quiz"></div>
         <button id="submit">Submit Quiz</button>
         <div id="results"></div>
@@ -141,7 +113,7 @@ export default {
   methods: {},
   mounted: function () {
     document.getElementById("quiz").style.display = "none";
-
+    document.getElementById("submit").style.display = "none";
 
     function buildQuiz() {
         console.log("BUILDQUIZ called");
@@ -272,6 +244,7 @@ export default {
 
       quizContainer.innerHTML= "";
       resultsContainer.innerHTML= "";
+      
       // Kick things off
       buildQuiz();
 
