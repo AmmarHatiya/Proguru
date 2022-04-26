@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //Database connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/univeristy',
+mongoose.connect('mongodb://localhost:27017/app',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -14,9 +14,6 @@ mongoose.connect('mongodb://localhost:27017/univeristy',
         }
     }
 );
-/* Doesn't work after version 6.0???
-mongoose.set('useCreateIndex', true);
-*/
 
 //create Schema for university table
 let schema = mongoose.Schema;
@@ -32,30 +29,13 @@ let userSchema = new schema({
 });
 
 //student Schema that contains students info
-let studentSchema = new schema({
-    sid: {
-            type: String,
-            unique: true,
-            index: true
-        },
-    firstName: String,
-    lastName: String,
-    gpa: Number
-
+let lessonSchema = new schema({
+    userId: String,
+    lesson1: String,
 },{
-    collection: "students"
+    collection: "lesson"
 });
 
 //Link the Database with our objects
 module.exports.User = mongoose.model('users', userSchema);
-module.exports.Student = mongoose.model('students', studentSchema);
-
-/*
-    Database: University
-        Table:
-                users: 
-                    columns:
-
-                students,
-
-*/
+module.exports.Student = mongoose.model('lesson', lessonSchema);
