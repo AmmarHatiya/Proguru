@@ -15,6 +15,7 @@
 <script>
 
     import auth from '../js/auth';
+    const axios = require('axios').default;
     export default {
         name: "LoginForm",
         data(){
@@ -27,17 +28,25 @@
         methods:{
             login(){
                 console.log('Call login()');
-                auth.login(this.username, this.password, (res) => {
-                    if (res.auth){
-                        //Login succesful, go to home page.
-                        console.log('Login success');
-                        this.$router.replace('/');
-                    } else{
-                        //Login failed.
-                        console.log('Login failed');
-                        this.errorMessage = "Login failed";
+                let config = {
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
                     }
-                })
+                }
+                axios
+                    .get('http://localhost:3000',config)
+                    .then(response => console.log("From vue:",response));
+                // auth.login(this.username, this.password, (res) => {
+                //     if (res.auth){
+                //         //Login succesful, go to home page.
+                //         console.log('Login success');
+                //         this.$router.replace('/');
+                //     } else{
+                //         //Login failed.
+                //         console.log('Login failed');
+                //         this.errorMessage = "Login failed";
+                //     }
+                // })
             }
         }
     }
