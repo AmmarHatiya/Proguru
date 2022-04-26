@@ -51,13 +51,14 @@ app.post('/login', urlencodedParser, function(request, response){
         //Success
         // console.log(`savedpassword: ${result}`);
         // console.log(`givenpassword: ${password}`);
-        if (bcrypt.compareSync(hashPswd,result)){
+        if (bcrypt.compareSync(password,hashPswd)){
             response.send("Login successful!");
         }else{
             response.send("Login failed, invalid username or password.");
         }
     }).catch(error => {
-        response.send("Error in trying to login!");
+        console.log("Nope:" + error)
+        response.send("Error in trying to login! Error:" + error);
     });
     
     

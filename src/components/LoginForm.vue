@@ -14,21 +14,21 @@
         <div class="col-sm">
         </div>
         <div class="col-sm">
-            <form>
+            <form @submit.prevent="login">
             <!-- Email input -->
             <div class="form-outline ">
-                <input type="email" id="form2Example1" class="form-control rect-box" />
+                <input type="text" id="form2Example1" class="form-control rect-box" v-model="uname" />
                 <label class="form-label" for="form2Example1">Username</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline box2">
-                <input type="password" id="form2Example2" class="form-control rect-box" />
+                <input type="password" id="form2Example2" class="form-control rect-box" v-model="pword" />
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
 
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block">Sign in</button>
+            <button type="login" class="btn btn-primary btn-block">Sign in</button>
 
             <!-- Register buttons -->
             <div class=row>
@@ -54,26 +54,38 @@
 
     import auth from '../js/auth';
     const axios = require('axios').default;
+    var qs = require('qs');
     export default {
         name: "LoginForm",
         data(){
             return{
-                username: "Bret",
-                password: "hildegard.org",
-                errorMessage: ""
+                uname: "",
+                pword: "",
             }
         },
         methods:{
             login(){
                 console.log('Call login()');
+                var ledata = qs.stringify({
+                        'username': this.uname,
+                        'password': this.pword 
+                        });
                 let config = {
+                    method: 'post',
+                    url: 'http://localhost:3000/login',
                     headers: {
                         "Access-Control-Allow-Origin": "*",
-                    }
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data : ledata
                 }
-                axios
-                    .get('http://localhost:3000',config)
-                    .then(response => console.log("From vue:",response));
+                console.log("name:",this.uname)
+                console.log("pword:",this.pword)
+                console.log(config)
+                axios(config).then(response => console.log("From vue:",response));
+                // axios
+                //     .post('http://localhost:3000/login',config)
+                //     .then(response => console.log("From vue:",response));
                 // auth.login(this.username, this.password, (res) => {
                 //     if (res.auth){
                 //         //Login succesful, go to home page.
