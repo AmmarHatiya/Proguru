@@ -9,14 +9,18 @@
 
         <ul class="list-unstyled components">
           <li class="active">
-            <a id="stringlesson" href="#stringlesson" data-toggle="collapse"
+            <a
+              class="elem"
+              id="stringlesson"
+              href="#stringlesson"
+              data-toggle="collapse"
               >Lesson</a
             >
           </li>
           <li class="active">
             <a
+              class="elem"
               id="stringquiz"
-              onclick="console.log('AYOOO');"
               href="#stringquiz"
               data-toggle="collapse"
               >Quiz</a
@@ -43,90 +47,115 @@
           </button>
         </div>
         <div id="lesson">
-          <h2>Lesson 1: Strings</h2>
+          <h1>Lesson 1: Strings</h1>
           <p>
             Strings are one of the most fundamental data types in programming. A
             string is made up of an ordered sequence of characters. For example,
             "hello world" is a data value of type string. In Python, can be
-            surrounded by either double quotes or single quotes. This means that
+            surrounded by either double quotes or single quotes. That means
             'Ammar' is equivalent to "Ammar".
           </p>
-          <p></p>
 
           <div class="line"></div>
 
-          <h2>Lorem Ipsum Dolor</h2>
+          <h3>Displaying, Initializing, & Accessing</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            To display a string, we use the print() method. The line print("Web
+            Development") would result in the string "Web Development" being
+            written to our console. In practice, printing as we've done in the
+            example above isn't very common. Instead, we assign our strings to
+            variables. This is done like so:
+          </p>
+          <p
+            style="
+              margin-right: 25rem;
+              margin-left: 25rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            var_name = "We place our String here"
+          </p>
+          <p>
+            Here, the left side of our equation contains our variable name (in
+            this case, var_name). On the other side of the equal sign, we have
+            the string we wish to assign to var_name. Once initialized, 
+            we can index our variable just as we index other sequences. 
+            We use square brackets beside our variable name to retrieve 
+            the character at a certain index. For example: 
+          </p><p
+            style="
+              margin-right: 25rem;
+              margin-left: 25rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            print(var_name[0])
+          </p>
+          <p>This statement would result in the character 'W' being printed on our Python console. 
+            Note that when indexing, our values start from 0. We can also index in reverse
+            (i.e var_name[-1] would return the last character of our string which is 'e'). </p>
+          <div class="line"></div>
+
+          <h3>String Methods</h3>
+          <p>
+            Python has many built-in methods that we can use with strings. 
+            One of the most popular functions, is the len() function, which returns the length of the given string.</p>
+            <p
+            style="
+              margin-right: 25rem;
+              margin-left: 25rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            print(len(var_name))
+          </p><p>
+            The above statement would return 24 (Note that the count includes whitespace). 
+            That is, there are 24 characters in the string variable var_name. Another commonly used 
+            string method is the count method. The count method takes one argument and counts the 
+            amount of times that its argument appears within the string. In our case, the line </p>
+                        <p
+            style="
+              margin-right: 25rem;
+              margin-left: 25rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            print(var_name.count('e'))
+          </p>
+            <p>
+            would return a value of 4, since there are 4 'e' characters within var_name.
+            Overall, there are many useful built-in methods for strings in Python. 
+            Adding these to your programming toolset will make it easier for you to work with strings in the future.
+            For a comprehensive list of all of Python's built-in string functions, 
+            click <a style="color: #700000; font-weight: 700; font-size:115%;" href="https://www.w3schools.com/python/python_ref_string.asp">here.</a>
           </p>
           <div class="line"></div>
 
-          <h3>Lorem Ipsum Dolor</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <p style="font-size: 140%;">In conclusion, the String data type is one of the most fundamental/basic data types in programming. 
+            The quicker you master it, the quicker you'll be on your way to becoming an expert programmer!</p>
+
         </div>
-        <!-- <div id="quiz">
-          <form>
-            <h5>A string is an ordered sequence of _____.</h5>
-            <div class="form-group" id="knowledgeCheck1">
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label
-                  style="margin-left: -700px"
-                  class="form-check-label"
-                  for="exampleCheck1"
-                  >Characters</label
-                >
-              </div>
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck2"
-                />
-                <label
-                  style="margin-left: -700px"
-                  class="form-check-label"
-                  for="exampleCheck2"
-                  >Integers</label
-                >
-              </div>
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck3"
-                />
-                <label
-                  style="margin-left: -700px"
-                  class="form-check-label"
-                  for="exampleCheck3"
-                  >Pythons</label
-                >
-              </div>
-            </div>
-          </form>
-        </div> -->
-        <div id="quiz"></div>
-        <button id="submit">Submit Quiz</button>
-        <div id="results"></div>
+        <div style="font-weight: 700;" id="quiz"></div>
+        <div id="final">
+          <div style="vertical-align: middle; display: inline-block">
+            <button style="margin-left: -350px" id="submit">Submit Quiz</button>
+            <svg
+              id="pie"
+              style="margin-right: -700px"
+              width="300"
+              height="200"
+            ></svg>
+          </div>
+          <div style="color: #700000; font-weight: 800; font-size: 120%; margin-left: 525px" id="results"></div>
+        </div>
       </div>
     </div>
   </body>
@@ -136,144 +165,203 @@
 
 <script >
 import $ from "jquery";
+import * as d3 from "d3";
 export default {
   name: "DTSidebar",
   methods: {},
   mounted: function () {
     document.getElementById("quiz").style.display = "none";
+    document.getElementById("final").style.display = "none";
 
+    function drawQuiz() {
+      console.log("drawQuiz called");
+      // variable to store the HTML output
+      const output = [];
 
-    function buildQuiz() {
-        console.log("BUILDQUIZ called");
-        // variable to store the HTML output
-        const output = [];
-            
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-          // variable to store the list of possible answers
-          const answers = [];
-          var letter;
-          // and for each available answer...
-          for (letter in currentQuestion.answers) {
-            // ...add an HTML radio button
-            answers.push(
-              `<div class="form-check>
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // variable to store the list of possible answers
+        const answers = [];
+        var letter;
+        // and for each available answer...
+        for (letter in currentQuestion.answers) {
+          // ...add an HTML radio button
+          answers.push(
+            `<div style="font-family: 'Raleway'" class="form-check>
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <input type="radio" class="form-check-input" name="question${questionNumber}" value=${letter} id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
+              <input type="radio" style="margin:0.5rem; class="form-check-input" name="question${questionNumber}" value=${letter} id="flexRadioDefault1">
+              <label style="margin:0.5rem; font-size:110%;" class="form-check-label" for="flexRadioDefault1">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label></div>`
-            );
-          }
-
-          // add this question and its answers to the output
-          output.push(
-            `<div class="question"> ${currentQuestion.question} </div>
-          <div class="answers"> ${answers.join("")} </div></div>`
           );
-        });
+        }
 
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML += output.join("");
-      }
+        // add this question and its answers to the output
+        output.push(
+          `<div style="font-family: 'Raleway'; font-size: 150%;" class="question"> ${
+            currentQuestion.question
+          } </div>
+          <div style="margin: 2rem;"class="answers"> ${answers.join(
+            ""
+          )} </div></div>`
+        );
+      });
 
-      function showResults() {
-        // gather answer containers from our quiz
-        const answerContainers = quizContainer.querySelectorAll(".answers");
+      // finally combine our output list into one string of HTML and put it on the page
+      quizContainer.innerHTML += output.join("");
+    }
 
-        // keep track of user's answers
-        let numCorrect = 0;
+    function showResults() {
+      // gather answer containers from our quiz
+      const answerContainers = quizContainer.querySelectorAll(".answers");
 
-        // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
-          // find selected answer
-          const answerContainer = answerContainers[questionNumber];
-          const selector = `input[name=question${questionNumber}]:checked`;
-          const userAnswer = (answerContainer.querySelector(selector) || {})
-            .value;
+      // keep track of user's answers
+      let numCorrect = 0;
 
-          // if answer is correct
-          if (userAnswer === currentQuestion.correctAnswer) {
-            // add to the number of correct answers
-            numCorrect++;
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {})
+          .value;
 
-            // color the answers green
-            answerContainers[questionNumber].style.color = "lightgreen";
-          }
-          // if answer is wrong or blank
-          else {
-            // color the answers red
-            answerContainers[questionNumber].style.color = "red";
-          }
-        });
+        // if answer is correct
+        if (userAnswer === currentQuestion.correctAnswer) {
+          // add to the number of correct answers
+          numCorrect++;
 
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-      }
+          // color the answers green
+          answerContainers[questionNumber].style.color = "green";
+        }
+        // if answer is wrong or blank
+        else {
+          // color the answers red
+          answerContainers[questionNumber].style.color = "red";
+        }
+      });
 
-      const quizContainer = document.getElementById("quiz");
-      const resultsContainer = document.getElementById("results");
-      const submitButton = document.getElementById("submit");
-      const myQuestions = [
-        {
-          question: "Strings are an ordered sequence of ______",
-          answers: {
-            a: "Pythons",
-            b: "Integers",
-            c: "Characters",
-          },
-          correctAnswer: "c",
+      // show number of correct answers out of total
+      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+
+      var data = [`${numCorrect}`, `${myQuestions.length - numCorrect}`];
+
+      var svg = d3.select("svg"),
+        width = svg.attr("width"),
+        height = svg.attr("height"),
+        radius = Math.min(width, height) / 2,
+        g = svg
+          .append("g")
+          .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+      var color = d3.scaleOrdinal(["green", "red"]);
+
+      // Generate the pie
+      var pie = d3.pie();
+
+      // Generate the arcs
+      var arc = d3.arc().innerRadius(0).outerRadius(radius);
+
+      //Generate groups
+      var arcs = g
+        .selectAll("arc")
+        .data(pie(data))
+        .enter()
+        .append("g")
+        .attr("class", "arc");
+
+      //Draw arc paths
+      arcs
+        .append("path")
+        .attr("fill", function (d, i) {
+          return color(i);
+        })
+        .attr("d", arc);
+    }
+
+    const quizContainer = document.getElementById("quiz");
+    const resultsContainer = document.getElementById("results");
+    const submitButton = document.getElementById("submit");
+    const myQuestions = [
+      {
+        question: "Strings are an ordered sequence of ______",
+        answers: {
+          a: "Pythons",
+          b: "Integers",
+          c: "Characters",
         },
-        {
-          question: "Which of the following is true regarding Strings in Python?",
-          answers: {
-            a: "Strings are only available through the numpy library",
-            b: "Indexing over a Strings is impossible",
-            c: "Double and Single quotes are equivalent",
-          },
-          correctAnswer: "c",
+        correctAnswer: "c",
+      },
+      {
+        question: "Which of the following is true regarding Strings in Python?",
+        answers: {
+          a: "Strings are only available through the numpy library",
+          b: "Indexing over a Strings is impossible",
+          c: "Double and Single quotes are equivalent",
         },
-        {
-          question: "Which of the following successfully prints 'Hello World' ?",
-          answers: {
-            a: "print(Hello World)",
-            b: "print('Hello World')",
-            c: "print(Hello, World)",
-            d: "print(Hello + World)",
-          },
-          correctAnswer: "b",
+        correctAnswer: "c",
+      },
+      {
+        question: "Which of the following successfully prints 'Hello World' ?",
+        answers: {
+          a: "print(Hello World)",
+          b: "print('Hello World')",
+          c: "print(Hello, World)",
+          d: "print(Hello + World)",
         },
-        {
-          question: "True or False: Strings are one of the most advanced data types in Python",
-          answers: {
-            a: "True",
-            b: "False",
-
-          },
-          correctAnswer: "b",
+        correctAnswer: "b",
+      },
+      {
+        question:
+          "True or False: Strings are one of the most advanced data types in Python",
+        answers: {
+          a: "True",
+          b: "False",
         },
-      ];
+        correctAnswer: "b",
+      },
+      {question: "Performing len('Hello World ') returns: ",
+        answers: {
+          a: "10",
+          b: "11",
+          c: "12",
+        },
+        correctAnswer: "c",
+      },
+    ];
 
-
-
+    // animations when mouse hovers over sidebar buttons
+    document.getElementById("stringlesson").onmouseover = function () {
+      document.getElementById("stringlesson").style.border = "1px solid white";
+    };
+    document.getElementById("stringlesson").onmouseleave = function () {
+      document.getElementById("stringlesson").style.border = "";
+    };
+        document.getElementById("stringquiz").onmouseover = function () {
+      document.getElementById("stringquiz").style.border = "1px solid white";
+    };
+    document.getElementById("stringquiz").onmouseleave = function () {
+      document.getElementById("stringquiz").style.border = "";
+    };
 
     // When lesson sidebar is clicked, then display
     document.getElementById("stringlesson").onclick = function () {
       document.getElementById("lesson").style.display = "";
-      document.getElementById("submit").style.display = "none";
+      document.getElementById("final").style.display = "none";
       document.getElementById("quiz").style.display = "none";
     };
     // When quiz sidebar button is clicked, then display
     document.getElementById("stringquiz").onclick = function () {
       document.getElementById("quiz").style.display = "";
       document.getElementById("lesson").style.display = "none";
-      document.getElementById("submit").style.display = "";
+      document.getElementById("final").style.display = "";
 
-      quizContainer.innerHTML= "";
-      resultsContainer.innerHTML= "";
-      // Kick things off
-      buildQuiz();
+      quizContainer.innerHTML = "";
+      resultsContainer.innerHTML = "";
+      document.getElementById("pie").innerHTML = "";
+
+      drawQuiz();
 
       // Event listeners
       submitButton.addEventListener("click", showResults);
@@ -289,43 +377,15 @@ export default {
 <style scoped>
 @import "https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700";
 
-.question {
-  font-weight: 600;
-}
-.answers {
-  margin-bottom: 20px;
-}
-.answers label {
-  display: block;
-}
-#submit {
-  font-family: sans-serif;
-  font-size: 20px;
-  background-color: #279;
-  color: #fff;
-  border: 0px;
-  border-radius: 3px;
-  padding: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-#submit:hover {
-  background-color: #38a;
-}
 
-#exampleCheck1,
-#exampleCheck2,
-#exampleCheck3 {
-  margin-left: 600px;
-}
-#knowledgeCheck1 {
-  font-family: "Raleway";
-}
+
+
 body {
   font-family: "Raleway", sans-serif;
   background: #ffffff;
 }
 p {
+  margin-top: 15px;
   font-family: "Raleway", sans-serif;
   font-size: 1.2em;
   font-weight: 450;
@@ -339,17 +399,25 @@ a:focus {
   text-decoration: none;
   transition: all 0.3s;
 }
+/* To get rid of text decoration on hyperlinks */
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
 
 .line {
   width: 100%;
   height: 1px;
   border-bottom: 1px dashed rgb(255, 255, 255);
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
+/* ---------------
+    SIDEBAR 
+------------------ */
 
 .wrapper {
   display: flex;
@@ -394,7 +462,7 @@ a:focus {
 
 #sidebar ul li a:hover {
   color: #700000;
-  background: #fff;
+  background: #ffffff;
 }
 
 #sidebar ul li.active > a,
@@ -443,10 +511,36 @@ a.article:hover {
   background: #700000 !important;
   color: #fff !important;
 }
-
-/* ---------------------------------------------------
+.question {
+  font-weight: 600;
+  font-family: "Raleway";
+  font-size: 150%;
+}
+.answers {
+  margin-bottom: 20px;
+  margin: 2rem;
+}
+.answers label {
+  display: block;
+}
+#submit {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 2rem;
+  background-color: #700000;
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+#submit:hover {
+  background-color: rgb(0, 0, 0);
+}
+/* ----------------
     CONTENT STYLE
------------------------------------------------------ */
+------------------- */
 
 #content {
   width: 100%;
@@ -459,9 +553,9 @@ a.article:hover {
   margin-left: -1350px;
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+/* --------------
+    Size
+----------------- */
 
 @media (max-width: 768px) {
   #sidebar {
