@@ -29,7 +29,7 @@
         </ul>
       </nav>
 
-      <!-- Page Content  -->
+      <!-- Page lesson/quiz  -->
       <div id="content">
         <div class="container-fluid">
           <button
@@ -177,24 +177,24 @@ export default {
 
     function drawQuiz() {
       console.log("drawQuiz called");
-      // variable to store the HTML output
+      // store output
       const output = [];
 
-      // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
+      // loop through every question and 
+      Questions.forEach((curr, Qnum) => {
         // variable to store the list of possible answers
         const answers = [];
         var letter;
         // and for each available answer...
-        for (letter in currentQuestion.answers) {
+        for (letter in curr.answers) {
           // ...add an HTML radio button
           answers.push(
             `<div style="font-family: 'Raleway'" class="form-check>
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <input type="radio" style="margin:0.5rem; class="form-check-input" name="question${questionNumber}" value=${letter} id="flexRadioDefault1">
+              <input type="radio" style="margin:0.5rem; class="form-check-input" name="question${Qnum}" value=${letter} id="flexRadioDefault1">
               <label style="margin:0.5rem; font-size:110%;" class="form-check-label" for="flexRadioDefault1">
               ${letter} :
-              ${currentQuestion.answers[letter]}
+              ${curr.answers[letter]}
             </label></div>`
           );
         }
@@ -202,7 +202,7 @@ export default {
         // add this question and its answers to the output
         output.push(
           `<div style="font-family: 'Raleway'; font-size: 150%;" class="question"> ${
-            currentQuestion.question
+            curr.question
           } </div>
           <div style="margin: 2rem;"class="answers"> ${answers.join(
             ""
@@ -210,44 +210,43 @@ export default {
         );
       });
 
-      // finally combine our output list into one string of HTML and put it on the page
-      quizContainer.innerHTML += output.join("");
+      // join every entry in output and make it one html part
+      quizPortion.innerHTML += output.join("");
     }
 
     function showResults() {
-      // gather answer containers from our quiz
-      const answerContainers = quizContainer.querySelectorAll(".answers");
+      // get all answers
+      const answersPortion = quizPortion.querySelectorAll(".answers");
 
-      // keep track of user's answers
-      let numCorrect = 0;
+      let numRight = 0;
 
-      // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
-        // find selected answer
-        const answerContainer = answerContainers[questionNumber];
-        const selector = `input[name=question${questionNumber}]:checked`;
-        const userAnswer = (answerContainer.querySelector(selector) || {})
+      // for every question
+      Questions.forEach((curr, Qnum) => {
+        // currentanswer for the question
+        const currAns = answersPortion[Qnum];
+        const selector = `input[name=question${Qnum}]:checked`;
+        const userAnswer = (currAns.querySelector(selector) || {})
           .value;
 
-        // if answer is correct
-        if (userAnswer === currentQuestion.correctAnswer) {
-          // add to the number of correct answers
-          numCorrect++;
-
-          // color the answers green
-          answerContainers[questionNumber].style.color = "green";
+        // if right
+        if (userAnswer === curr.correctAnswer) {
+          numRight++;
+          // Make answer green
+          answersPortion[Qnum].style.color = "green";
         }
-        // if answer is wrong or blank
+        // if answer is wrong 
         else {
-          // color the answers red
-          answerContainers[questionNumber].style.color = "red";
+          // make answer red
+          answersPortion[Qnum].style.color = "red";
         }
       });
 
-      // show number of correct answers out of total
-      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+      // print number of correct answers out of total
+      resultsContainer.innerHTML = `${numRight} out of ${Questions.length}`;
 
-      var data = [`${numCorrect}`, `${myQuestions.length - numCorrect}`];
+      // data for pie chart, right vs wrong
+      var data = [`${numRight}`, `${Questions.length - numRight}`];
+
 
       var svg = d3.select("svg"),
         width = svg.attr("width"),
@@ -259,10 +258,10 @@ export default {
 
       var color = d3.scaleOrdinal(["green", "red"]);
 
-      // Generate the pie
+      // generate pie
       var pie = d3.pie();
 
-      // Generate the arcs
+      // generate the arcs
       var arc = d3.arc().innerRadius(0).outerRadius(radius);
 
       //Generate groups
@@ -273,7 +272,7 @@ export default {
         .append("g")
         .attr("class", "arc");
 
-      //Draw arc paths
+      //Draw arcs
       arcs
         .append("path")
         .attr("fill", function (d, i) {
@@ -282,10 +281,11 @@ export default {
         .attr("d", arc);
     }
 
-    const quizContainer = document.getElementById("quiz");
+    // list of our questions
+    const quizPortion = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
-    const myQuestions = [
+    const Questions = [
       {
         question: "Strings are an ordered sequence of ______",
         answers: {
@@ -359,7 +359,7 @@ export default {
       document.getElementById("lesson").style.display = "none";
       document.getElementById("final").style.display = "";
 
-      quizContainer.innerHTML = "";
+      quizPortion.innerHTML = "";
       resultsContainer.innerHTML = "";
       document.getElementById("pie").innerHTML = "";
 
@@ -418,7 +418,7 @@ a:active { text-decoration: none; }
 }
 
 /* ---------------
-    SIDEBAR 
+    sidebar
 ------------------ */
 
 .wrapper {
@@ -541,7 +541,7 @@ a.article:hover {
   background-color: rgb(0, 0, 0);
 }
 /* ----------------
-    CONTENT STYLE
+    content
 ------------------- */
 
 #content {
@@ -556,7 +556,7 @@ a.article:hover {
 }
 
 /* --------------
-    Size
+    screen size adjust
 ----------------- */
 
 @media (max-width: 768px) {
