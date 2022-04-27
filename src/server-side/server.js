@@ -98,13 +98,13 @@ app.post('/register', urlencodedParser, function(request, response){
     //.then is for resolve
     userExists(username).then(result =>{
         //User already exist
-        response.status(403).send("Username already taken");
+        response.send("Username already taken").status(403);
 
     }).catch( error=> { //.catch for reject
         let newUser = new db.User(userData);
         newUser.save(function(error){
             if(error){
-                response.status(403).send("Unable to save user due to " + error);
+                response.send("Unable to save user due to " + error).status(403);
             }else{
                 response.send("Register successful");
             }

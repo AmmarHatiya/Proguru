@@ -23,7 +23,7 @@
             <!-- Register -->
             <div class=row>
                 <div class="col text-end">
-                    <p>Not a member? <a href="#!">Register</a></p>
+                    <p>Not a member? <a href="" @click="goRegister">Register</a></p>
                 </div>
                 <div class="col text-start">
                  <!-- May be implemented -->
@@ -106,6 +106,9 @@
                         console.log("login unsuccessful, need to show error")
                         this.errorMessage = "Invalid username or password"
                     }})
+            },
+            goRegister(){
+                this.$router.push("/register")
             }
         }
     }
