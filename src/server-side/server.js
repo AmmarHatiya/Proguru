@@ -47,6 +47,20 @@ app.post('/', urlencodedParser,function(request, response){
     }
 });
 
+//retrieve username based on id
+app.get('/uid', urlencodedParser,function(request, response){
+    console.log(request.body.uid)
+    if (request.body.uid == undefined){
+        console.log("CANNOT GET")
+    } else{
+        db.User.find({_id: request.body.uid}).then( r => {
+            console.log("Result:", r);
+            response.send(r[0].username);
+            }
+        );
+    }
+});
+
 app.post('/login', urlencodedParser, function(request, response){
     //Check the login info form database.
     // console.log(request.body);

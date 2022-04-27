@@ -62,6 +62,7 @@
                         'username': this.uname,
                         'password': this.pword 
                         });
+                localStorage.setItem("usrName", this.uname)
                 let config = {
                     method: 'post',
                     url: 'http://localhost:3000/login',
@@ -92,10 +93,14 @@
                             "data" : ledata2
                         }
                         $.ajax(config2).done(function (response) {
-                            localStorage.uID = response;
+                            localStorage.setItem("uID", response)
+                            console.log(localStorage.getItem("usrName"))
+                            // localStorage.uID = response;
+                            // localStorage.usrName = this.uname;
                         });
                         //reroute to home
-                        this.$router.replace('/');
+                        this.$router.replace('/').then(r => {this.$router.go(0)}
+                        )
 
                     } else{
                         console.log("login unsuccessful, need to show error")
