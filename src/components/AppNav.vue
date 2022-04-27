@@ -13,7 +13,7 @@
     export default{
         name: 'AppNav',
         data() {
-            return { isLoggedIn: auth.isLoggedIn()};
+            return { isLoggedIn: this.amILoggedIn()};
         },
         created(){
             auth.onLoginStatus = isLoggedIn =>{
@@ -21,10 +21,14 @@
             }
         },
         methods:{
+            amILoggedIn(){
+                return !!localStorage.usrName
+            },
             logout: function(){
                 auth.logout( (res) =>{
                     console.log(res)
                 });
+                this.$router.go(0)
             }
         }
     }

@@ -23,6 +23,8 @@ export default{
     //To logout from the page
     logout(callback){
         delete localStorage.token;
+        delete localStorage.usrName;
+        delete localStorage.uid;
         callback({
             auth:false
         });
