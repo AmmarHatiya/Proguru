@@ -11,8 +11,8 @@
           <li class="active">
             <a
               class="elem"
-              id="stringlesson"
-              href="#stringlesson"
+              id="numericlesson"
+              href="#numericlesson"
               data-toggle="collapse"
               >Lesson</a
             >
@@ -20,8 +20,8 @@
           <li class="active">
             <a
               class="elem"
-              id="stringquiz"
-              href="#stringquiz"
+              id="numericquiz"
+              href="#numericquiz"
               data-toggle="collapse"
               >Quiz</a
             >
@@ -47,26 +47,32 @@
           </button>
         </div>
         <div id="lesson">
-          <h1>Lesson 1: Strings</h1>
+          <h1>Lesson 2: Numeric Data Types</h1>
           <p>
-            Strings are one of the most fundamental data types in programming. A
-            string is made up of an ordered sequence of characters. For example,
-            "hello world" is a data value of type string. In Python, can be
-            surrounded by either double quotes or single quotes. That means
-            'Ammar' is equivalent to "Ammar".
+            Numerical Data is used everywhere. From the velocity of a rocket
+            exiting the Earth's atmosphere, to the amount of water pressure
+            along the Mariana Trench, numerical data can and is used to
+            represent a great deal of concepts in the world. For this reason its
+            important for us to master the use and manipulation of data in this
+            form. In Python, two of the most rudimentary forms of numeric data
+            are integers and floats. Most other numeric data types build off of
+            these two so, we'll be focusing on them for now.
           </p>
-          <img style="margin-bottom: -50px; width:10%;" src="../assets/alphabetgif.gif">
 
+          <img
+            style="margin-bottom: -70px; width: 10%"
+            src="../assets/rocketgif.gif"
+          />
 
           <div class="line"></div>
 
-          <h3>Displaying, Initializing, & Accessing</h3>
+          <h3>Integers</h3>
           <p>
-            To display a string, we use the print() method. The line print("Web
-            Development") would result in the string "Web Development" being
-            written to our console. In practice, printing as we've done in the
-            example above isn't very common. Instead, we assign our strings to
-            variables. This is done like so:
+            Integers in Python are any negative, zero, or positive whole
+            numbers. Note that integers cannot have a fractional part. That is,
+            -78945 is an integer, but -452.5 is not. In Python, integers have
+            unlimited precision meaning that they can be however big or small
+            you want them to be. We initialize integers by:
           </p>
           <p
             style="
@@ -77,75 +83,137 @@
               font-family: 'Courier';
             "
           >
-            var_name = "We place our String here"
+            var_name = 45
           </p>
           <p>
-            Here, the left side of our equation contains our variable name (in
-            this case, var_name). On the other side of the equal sign, we have
-            the string we wish to assign to var_name. Once initialized, 
-            we can index our variable just as we index other sequences. 
-            We use square brackets beside our variable name to retrieve 
-            the character at a certain index. For example: 
-          </p><p
-            style="
-              margin-right: 18rem;
-              margin-left: 18rem;
-              background: #700000;
-              color: white;
-              font-family: 'Courier';
-            "
-          >
-            print(var_name[0])
+            Here, our variable name is var_name, located on the left side of the
+            equation. On the other side, we have the integer value we wish to
+            assign (in this case, 45). Once we initialize it, we can now use the
+            variable name in operations that are valid for integers. We will
+            cover more on that later.
           </p>
-          <p>This statement would result in the character 'W' being printed on our Python console. 
-            Note that when indexing, our values start from 0. We can also index in reverse
-            (i.e var_name[-1] would return the last character of our string which is 'e'). </p>
-          <div class="line"></div>
-
-          <h3>String Methods</h3>
           <p>
-            Python has many built-in methods that we can use with strings. 
-            One of the most popular functions, is the len() function, which returns the length of the given string.</p>
-            <p
-            style="
-              margin-right: 18rem;
-              margin-left: 18rem;
-              background: #700000;
-              color: white;
-              font-family: 'Courier';
-            "
-          >
-            print(len(var_name))
-          </p><p>
-            The above statement would return 24 (Note that the count includes whitespace). 
-            That is, there are 24 characters in the string variable var_name. Another commonly used 
-            string method is the count method. The count method takes one argument and counts the 
-            amount of times that its argument appears within the string. In our case, the line </p>
-                        <p
-            style="
-              margin-right: 18rem;
-              margin-left: 18rem;
-              background: #700000;
-              color: white;
-              font-family: 'Courier';
-            "
-          >
-            print(var_name.count('e'))
+            If in some case we have a fractional number or even a string we want
+            to convert to an integer, we can use the int() function. This is
+            called typecasting and is very common in programming. For example:
           </p>
-            <p>
-            would return a value of 4, since there are 4 'e' characters within var_name.
-            Overall, there are many useful built-in methods for strings in Python. 
-            Adding these to your programming toolset will make it easier for you to work with strings in the future.
-            For a comprehensive list of all of Python's built-in string functions, 
-            click <a style="color: #700000; font-weight: 700; font-size:115%;" href="https://www.w3schools.com/python/python_ref_string.asp">here.</a>
+          <p
+            style="
+              margin-right: 18rem;
+              margin-left: 18rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            int('8.5')
+          </p>
+          <p>
+            In this case, the line would return an integer value of 8. Notice
+            that the 0.5 is not included because fractional parts of numbers
+            cannot be represented using integers.
+          </p>
+
+          <img
+            style="margin-bottom: -70px; width: 7%"
+            src="../assets/float.gif"
+          />
+
+          <div class="line"></div>
+
+          <h3>Floats</h3>
+          <p>
+            You may have noticed that since integers cannot represent fractional
+            numbers, they are very limited. Thankfully, floats exist in Python.
+            With floats, we can safely represent fractional numbers.
+            Specifically, a number such as 5.689 which would be impossible to
+            represent as an integer, can be represented as a float. We
+            initialized floats the same exact way as integers, and we can also
+            typecast floats via the float() function (see below).
+          </p>
+          <p
+            style="
+              margin-right: 18rem;
+              margin-left: 18rem;
+              background: #700000;
+              color: white;
+              font-family: 'Courier';
+            "
+          >
+            float('8')
+          </p>
+          <p>
+            The above statement would return a float value of 8.0. Notice that
+            we added '.0' to the end of the number to denote the difference. 
+            If you are ever confused by the type of any variable (numerical or otherwise), 
+            feel free to use the type() function, which will return
+             the type of the variable you specify (as an argument). 
           </p>
           <div class="line"></div>
 
-          <p style="font-size: 140%;">In conclusion, the String data type is one of the most fundamental/basic data types in programming. 
-            The quicker you master it, the quicker you'll be on your way to becoming an expert programmer!</p>
+          <h3>Operations</h3>
+          <p>
+            There are many mathematical operations we can perform with both
+            integers and floats. Below are some of Python's built-in
+            operators:
+          </p>
 
+          <div class="line"></div>
+
+          <table style="font-family: 'Raleway'; font-size: 120%; font-weight:700;" class="table">
+            <thead>
+              <tr>
+                <th scope="col">Operator</th>
+                <th scope="col">Usage/Function</th>
+                <th scope="col">Example >> Value Returned</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th style="font-size: 160%;" scope="row">+</th>
+                <td>Addition: adds both numbers</td>
+                <td>1+1 >> 2</td>
+              </tr>
+              <tr>
+                <th style="font-size: 160%;" scope="row">-</th>
+                <td>Subtraction: subtracts right side from left side</td>
+                <td>2-1 >> 1</td>
+              </tr>
+              <tr>
+                <th style="font-size: 160%;" scope="row">*</th>
+                <td>Multiplication: multiplies both numbers</td>
+                <td>3*2 >> 6</td>
+              </tr>
+              <tr>
+                <th style="font-size: 160%;" scope="row">/</th>
+                <td>Division: divides left side by right side</td>
+                <td>6/2 >> 3</td>
+              </tr>
+              <tr>
+                <th style="font-size: 160%;" scope="row">%</th>
+                <td>Modulus: remainder of the division of left side by right side</td>
+                <td>22%10 >> 2</td>
+              </tr>
+              <tr>
+                <th style="font-size: 160%;" scope="row">**</th>
+                <td>Exponent: left side to the power of the right side</td>
+                <td>3**2 >> 9</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="line"></div>
+
+          <p style="font-size: 140%">
+            Overall, integers and floats are extremely useful data types in programming. 
+            Using Python's built-in operators, we can represent the 
+            majority of mathematical computations that are possible.
+            Familiarizing yourself with the things we've covered in this lesson
+            will only help to strengthen your knowledge base and make you an even 
+            better programmer. Good Luck!
+          </p>
         </div>
-        <div style="font-weight: 700;" id="quiz"></div>
+        <div style="font-weight: 700" id="quiz"></div>
         <div id="final">
           <div style="vertical-align: middle; display: inline-block">
             <button style="margin-left: -350px" id="submit">Submit Quiz</button>
@@ -156,7 +224,15 @@
               height="200"
             ></svg>
           </div>
-          <div style="color: #700000; font-weight: 800; font-size: 120%; margin-left: 525px" id="results"></div>
+          <div
+            style="
+              color: #700000;
+              font-weight: 800;
+              font-size: 120%;
+              margin-left: 525px;
+            "
+            id="results"
+          ></div>
         </div>
       </div>
     </div>
@@ -169,7 +245,7 @@
 import $ from "jquery";
 import * as d3 from "d3";
 export default {
-  name: "DTSidebar",
+  name: "NumericSidebar",
   methods: {},
   mounted: function () {
     document.getElementById("quiz").style.display = "none";
@@ -287,74 +363,74 @@ export default {
     const submitButton = document.getElementById("submit");
     const myQuestions = [
       {
-        question: "Strings are an ordered sequence of ______",
-        answers: {
-          a: "Pythons",
-          b: "Integers",
-          c: "Characters",
-        },
-        correctAnswer: "c",
-      },
-      {
-        question: "Which of the following is true regarding Strings in Python?",
-        answers: {
-          a: "Strings are only available through the numpy library",
-          b: "Indexing over a Strings is impossible",
-          c: "Double and Single quotes are equivalent",
-        },
-        correctAnswer: "c",
-      },
-      {
-        question: "Which of the following successfully prints 'Hello World' ?",
-        answers: {
-          a: "print(Hello World)",
-          b: "print('Hello World')",
-          c: "print(Hello, World)",
-          d: "print(Hello + World)",
-        },
-        correctAnswer: "b",
-      },
-      {
-        question:
-          "True or False: Strings are one of the most advanced data types in Python",
+        question: "True or False: In the following statement, the variable var_name is an integer: >>var_name = 4.0",
         answers: {
           a: "True",
           b: "False",
         },
         correctAnswer: "b",
       },
-      {question: "Performing len('Hello World ') returns: ",
+      {
+        question: "Which of the following is true regarding Integers in Python?",
         answers: {
-          a: "10",
-          b: "11",
-          c: "12",
+          a: "Integers are only available through the math module",
+          b: "Integers have unlimited precision",
+          c: "Integers always contain decimals",
+        },
+        correctAnswer: "b",
+      },
+      {
+        question: "Which of the following returns 9?",
+        answers: {
+          a: "a*8",
+          b: "3*2",
+          c: "3**2",
+          d: "8**1",
         },
         correctAnswer: "c",
+      },
+      {
+        question:
+          "True or False: The following line returns float: >>type('7.2')",
+        answers: {
+          a: "True",
+          b: "False",
+        },
+        correctAnswer: "b",
+      },
+      {
+        question: "What will  the following line return: >>float('9')",
+        answers: {
+          a: "9",
+          b: "9.0",
+          c: "9.2",
+        },
+        correctAnswer: "b",
       },
     ];
 
     // animations when mouse hovers over sidebar buttons
-    document.getElementById("stringlesson").onmouseover = function () {
-      document.getElementById("stringlesson").style.border = "1px solid white";
+    document.getElementById("numericlesson").onmouseover = function () {
+      document.getElementById("numericlesson").style.border = "1px solid white";
     };
-    document.getElementById("stringlesson").onmouseleave = function () {
-      document.getElementById("stringlesson").style.border = "";
+    document.getElementById("numericlesson").onmouseleave = function () {
+      document.getElementById("numericlesson").style.border = "";
     };
-        document.getElementById("stringquiz").onmouseover = function () {
-      document.getElementById("stringquiz").style.border = "1px solid white";
+    document.getElementById("numericquiz").onmouseover = function () {
+      document.getElementById("numericquiz").style.border = "1px solid white";
     };
-    document.getElementById("stringquiz").onmouseleave = function () {
-      document.getElementById("stringquiz").style.border = "";
+    document.getElementById("numericquiz").onmouseleave = function () {
+      document.getElementById("numericquiz").style.border = "";
     };
 
     // When lesson sidebar is clicked, then display
-    document.getElementById("stringlesson").onclick = function () {
+    document.getElementById("numericlesson").onclick = function () {
       document.getElementById("lesson").style.display = "";
       document.getElementById("final").style.display = "none";
       document.getElementById("quiz").style.display = "none";
     };
     // When quiz sidebar button is clicked, then display
-    document.getElementById("stringquiz").onclick = function () {
+    document.getElementById("numericquiz").onclick = function () {
       document.getElementById("quiz").style.display = "";
       document.getElementById("lesson").style.display = "none";
       document.getElementById("final").style.display = "";
@@ -379,9 +455,6 @@ export default {
 <style scoped>
 @import "https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700";
 
-
-
-
 body {
   font-family: "Raleway", sans-serif;
   background: #ffffff;
@@ -402,13 +475,21 @@ a:focus {
   transition: all 0.3s;
 }
 /* To get rid of text decoration on hyperlinks */
-a:link { text-decoration: none; }
+a:link {
+  text-decoration: none;
+}
 
-a:visited { text-decoration: none; }
+a:visited {
+  text-decoration: none;
+}
 
-a:hover { text-decoration: none; }
+a:hover {
+  text-decoration: none;
+}
 
-a:active { text-decoration: none; }
+a:active {
+  text-decoration: none;
+}
 
 .line {
   width: 100%;
