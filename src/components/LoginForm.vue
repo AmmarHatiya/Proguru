@@ -1,53 +1,143 @@
 <template>
-    <form @submit.prevent="login">
-        <label for="username"> Username: </label>
-        <input type="text" v-model="username" name="username" placeholder="Username"/>
+    <div class="row top">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+            <form @submit.prevent="login">
+            <!-- Username -->
+            <div class="form-outline ">
+                <input type="text" id="uName" class="form-control rect-box" v-model="uname" />
+                <label class="form-label" for="uName">Username</label>
+            </div>
 
-        <label for="password"> Password: </label>
-        <input type="password" v-model="password" name="password" placeholder="Password"/>
-        <div v-if="errorMessage"> {{errorMessage}} </div>
-        <button class="btn"> Login </button>
+            <!-- Password -->
+            <div class="form-outline box2">
+                <input type="password" id="pWord" class="form-control rect-box" v-model="pword" />
+                <label class="form-label" for="pWord">Password</label>
+            </div>
 
-    </form>
+            <div class="errormessage">{{errorMessage}}</div>
+
+            <button type="login" class="btn btn-primary btn-block">Sign in</button>
+
+            <!-- Register -->
+            <div class=row>
+                <div class="col text-end">
+                    <p>Not a member? <a href="" @click="goRegister">Register</a></p>
+                </div>
+                <div class="col text-start">
+                 <!-- May be implemented -->
+                 <a href="#!">Forgot your password?</a>
+                 </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
 </template>
+
+
 
 
 <script>
 
     import auth from '../js/auth';
+    import $ from 'jquery'
     const axios = require('axios').default;
+    var qs = require('qs');
     export default {
         name: "LoginForm",
         data(){
             return{
-                username: "Bret",
-                password: "hildegard.org",
+                uname: "",
+                pword: "",
                 errorMessage: ""
             }
         },
         methods:{
             login(){
                 console.log('Call login()');
+                var ledata = qs.stringify({
+                        'username': this.uname,
+                        'password': this.pword 
+                        });
+                localStorage.setItem("usrName", this.uname)
                 let config = {
+                    method: 'post',
+                    url: 'http://localhost:3000/login',
                     headers: {
                         "Access-Control-Allow-Origin": "*",
-                    }
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data : ledata
                 }
-                axios
-                    .get('http://localhost:3000',config)
-                    .then(response => console.log("From vue:",response));
-                // auth.login(this.username, this.password, (res) => {
-                //     if (res.auth){
-                //         //Login succesful, go to home page.
-                //         console.log('Login success');
-                //         this.$router.replace('/');
-                //     } else{
-                //         //Login failed.
-                //         console.log('Login failed');
-                //         this.errorMessage = "Login failed";
-                //     }
-                // })
+                // console.log("name:",this.uname)
+                // console.log("pword:",this.pword)
+                // console.log(config)
+                axios(config).then(response => {
+                    if(response.data.includes("successful")){
+                        console.log("login successful")
+                        //save the active user id to session
+                        var ledata2 = {
+                            'username': this.uname,
+                            'password': this.pword 
+                        };
+                        let config2 = {
+                            "url": "http://localhost:3000/",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded"
+                            },
+                            "data" : ledata2
+                        }
+                        $.ajax(config2).done(function (response) {
+                            localStorage.setItem("uID", response)
+                            console.log(localStorage.getItem("usrName"))
+                            // localStorage.uID = response;
+                            // localStorage.usrName = this.uname;
+                        });
+                        //reroute to home
+                        this.$router.replace('/').then(r => {this.$router.go(0)}
+                        )
+
+                    } else{
+                        console.log("login unsuccessful, need to show error")
+                        this.errorMessage = "Invalid username or password"
+                    }})
+            },
+            goRegister(){
+                this.$router.push("/register")
             }
         }
     }
 </script>
+
+
+<style scoped>
+.top{
+    margin-top: 20px;
+}
+
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 45%;
+}
+
+.rect-box{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.forgot{
+    margin-right: 10%;
+}
+
+.errormessage{
+    color:red;
+}
+
+
+</style>
