@@ -34,10 +34,10 @@ export default {
   name: "DataLessonsCard",
   methods: {
     toString() {
-      this.$router.replace("/datatypes/strings");
+      this.$router.push("/datatypes/strings");
     },
     toNumeric() {
-      this.$router.replace("/datatypes/numeric");
+      this.$router.push("/datatypes/numeric");
     },
   },
 };

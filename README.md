@@ -1,9 +1,16 @@
 # Final Project
 
-## How to run
+## How to run (in this order)
 ### Server Side (running on localhost:3000)
+This is for the database (mongoose)
 ```
 cd src/server-side
+node server.js
+```
+### WebSocket Server Side (running on localhost:1337)
+This is for the Bash lesson
+```
+cd src/websocket
 node server.js
 ```
 ### Client Side
@@ -17,8 +24,8 @@ npm run serve
 | :------------------------:|:--------------------------------------:|
 | HTML & CSS & JavaScript | Throughout |
 | CSS frameworks  | [BootstrapVue3](https://cdmoro.github.io/bootstrap-vue-3/) |
-| JQuery | Sidebar toggle (Data Types)|
-| D3 & SVG| |
+| JQuery | Data Types and Login API|
+| D3 & SVG| DataTypes Strings Lesson|
 | DHTML | Bash/Terminal (document.getElementById) |
 | AJAX, web services | axios for login |
 | Node.js | backend API under server-side |
