@@ -11,8 +11,8 @@
           <li class="active">
             <a
               class="elem"
-              id="stringlesson"
-              href="#stringlesson"
+              id="numericlesson"
+              href="#numericlesson"
               data-toggle="collapse"
               >Lesson</a
             >
@@ -20,8 +20,8 @@
           <li class="active">
             <a
               class="elem"
-              id="stringquiz"
-              href="#stringquiz"
+              id="numericquiz"
+              href="#numericquiz"
               data-toggle="collapse"
               >Quiz</a
             >
@@ -76,8 +76,8 @@
           </p>
           <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -99,8 +99,8 @@
           </p>
           <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -133,8 +133,8 @@
           </p>
           <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -410,27 +410,27 @@ export default {
     ];
 
     // animations when mouse hovers over sidebar buttons
-    document.getElementById("stringlesson").onmouseover = function () {
-      document.getElementById("stringlesson").style.border = "1px solid white";
+    document.getElementById("numericlesson").onmouseover = function () {
+      document.getElementById("numericlesson").style.border = "1px solid white";
     };
-    document.getElementById("stringlesson").onmouseleave = function () {
-      document.getElementById("stringlesson").style.border = "";
+    document.getElementById("numericlesson").onmouseleave = function () {
+      document.getElementById("numericlesson").style.border = "";
     };
-    document.getElementById("stringquiz").onmouseover = function () {
-      document.getElementById("stringquiz").style.border = "1px solid white";
+    document.getElementById("numericquiz").onmouseover = function () {
+      document.getElementById("numericquiz").style.border = "1px solid white";
     };
-    document.getElementById("stringquiz").onmouseleave = function () {
-      document.getElementById("stringquiz").style.border = "";
+    document.getElementById("numericquiz").onmouseleave = function () {
+      document.getElementById("numericquiz").style.border = "";
     };
 
     // When lesson sidebar is clicked, then display
-    document.getElementById("stringlesson").onclick = function () {
+    document.getElementById("numericlesson").onclick = function () {
       document.getElementById("lesson").style.display = "";
       document.getElementById("final").style.display = "none";
       document.getElementById("quiz").style.display = "none";
     };
     // When quiz sidebar button is clicked, then display
-    document.getElementById("stringquiz").onclick = function () {
+    document.getElementById("numericquiz").onclick = function () {
       document.getElementById("quiz").style.display = "";
       document.getElementById("lesson").style.display = "none";
       document.getElementById("final").style.display = "";
@@ -633,7 +633,7 @@ a.article:hover {
 }
 
 #sidebarCollapse {
-  margin-left: -1350px;
+  margin-left: -950px;
 }
 
 /* --------------
