@@ -8,7 +8,7 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
     </div>
-    <div class="card">
+    <div class="card" @click="toC">
         <img class="card-img-top" src="../assets/placeholder.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">C++ (Meghna)</h5>
@@ -38,7 +38,10 @@ export default {
         },
         toDataTypes(){
             this.$router.replace('/datatypes');
-        }
+        },
+        toC(){
+            this.$router.replace('/cplusplus');
+        },
     }
 }
 </script>

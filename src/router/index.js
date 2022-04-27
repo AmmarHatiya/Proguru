@@ -6,10 +6,10 @@ import RegisterView from '../views/RegisterView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import BashView from '../views/BashView.vue'
 import DataTypesView from '../views/DataTypesView.vue'
-import SequenceView from '../views/SequenceView.vue'
 import NumericView from '../views/NumericView.vue'
 import StringView from '../views/StringView.vue'
-
+import CView from '../views/CView.vue'
+import CQuizView from '../views/CQuizView.vue'
 const routes = [
   {
     path: '/',
@@ -61,9 +61,14 @@ const routes = [
     component: NumericView
   },
   {
-    path: '/datatypes/sequence',
-    name: 'sequence',
-    component: SequenceView
+    path: '/cplusplus',
+    name: 'cplusplus',
+    component: CView
+  },
+  {
+    path: '/Cquiz',
+    name: 'CQuiz',
+    component: CQuizView
   }
 ]
 
