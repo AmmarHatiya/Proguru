@@ -70,8 +70,8 @@
           </p>
           <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -88,8 +88,8 @@
             the character at a certain index. For example: 
           </p><p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -108,8 +108,8 @@
             One of the most popular functions, is the len() function, which returns the length of the given string.</p>
             <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -123,8 +123,8 @@
             amount of times that its argument appears within the string. In our case, the line </p>
                         <p
             style="
-              margin-right: 25rem;
-              margin-left: 25rem;
+              margin-right: 18rem;
+              margin-left: 18rem;
               background: #700000;
               color: white;
               font-family: 'Courier';
@@ -552,7 +552,7 @@ a.article:hover {
 }
 
 #sidebarCollapse {
-  margin-left: -1350px;
+  margin-left: -950px;
 }
 
 /* --------------
