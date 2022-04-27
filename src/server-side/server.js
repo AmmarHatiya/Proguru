@@ -6,6 +6,7 @@ const port = 3000;
 const db = require('./mongoose.js');
 var bodyParser = require('body-parser')
 const bcrypt = require ('bcryptjs');
+const e = require('express');
 
 let app = express();
 
@@ -32,14 +33,32 @@ function userExists(userToFind){
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //retrieve id based on username
-app.get('/', urlencodedParser,function(request, response){
+app.post('/', urlencodedParser,function(request, response){
     console.log(request.body.username)
     console.log(request.body.password)
-    db.User.find({username: request.body.username}).then( r => {
+    if (request.body.username == undefined){
+        console.log("CANNOT GET")
+    } else{
+        db.User.find({username: request.body.username}).then( r => {
             console.log("Result:", r);
             response.send(r[0]._id);
-        }
-    );
+            }
+        );
+    }
+});
+
+//retrieve username based on id
+app.get('/uid', urlencodedParser,function(request, response){
+    console.log(request.body.uid)
+    if (request.body.uid == undefined){
+        console.log("CANNOT GET")
+    } else{
+        db.User.find({_id: request.body.uid}).then( r => {
+            console.log("Result:", r);
+            response.send(r[0].username);
+            }
+        );
+    }
 });
 
 app.post('/login', urlencodedParser, function(request, response){
@@ -51,13 +70,14 @@ app.post('/login', urlencodedParser, function(request, response){
         //Success
         // console.log(`savedpassword: ${result}`);
         // console.log(`givenpassword: ${password}`);
-        if (bcrypt.compareSync(hashPswd,result)){
+        if (bcrypt.compareSync(password,hashPswd)){
             response.send("Login successful!");
         }else{
             response.send("Login failed, invalid username or password.");
         }
     }).catch(error => {
-        response.send("Error in trying to login!");
+        console.log("Nope:" + error)
+        response.send("Error in trying to login! Error:" + error);
     });
     
     
@@ -78,13 +98,13 @@ app.post('/register', urlencodedParser, function(request, response){
     //.then is for resolve
     userExists(username).then(result =>{
         //User already exist
-        response.status(403).send("Username already taken");
+        response.send("Username already taken").status(403);
 
     }).catch( error=> { //.catch for reject
         let newUser = new db.User(userData);
         newUser.save(function(error){
             if(error){
-                response.status(403).send("Unable to save user due to " + error);
+                response.send("Unable to save user due to " + error).status(403);
             }else{
                 response.send("Register successful");
             }
