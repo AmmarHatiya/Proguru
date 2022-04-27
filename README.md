@@ -17,7 +17,7 @@ npm run serve
 | :------------------------:|:--------------------------------------:|
 | HTML & CSS & JavaScript | Throughout |
 | CSS frameworks  | [BootstrapVue3](https://cdmoro.github.io/bootstrap-vue-3/) |
-| JQuery | |
+| JQuery | Sidebar toggle (Data Types)|
 | D3 & SVG| |
 | DHTML | Bash/Terminal (document.getElementById) |
 | AJAX, web services | axios for login |

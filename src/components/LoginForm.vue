@@ -1,42 +1,32 @@
 <template>
-    <!-- <form @submit.prevent="login">
-        <label for="username"> Username: </label>
-        <input type="text" v-model="username" name="username" placeholder="Username"/>
-
-        <label for="password"> Password: </label>
-        <input type="password" v-model="password" name="password" placeholder="Password"/>
-        <div v-if="errorMessage"> {{errorMessage}} </div>
-        <button class="btn"> Login </button>
-
-    </form> -->
-
     <div class="row top">
         <div class="col-sm">
         </div>
         <div class="col-sm">
             <form @submit.prevent="login">
-            <!-- Email input -->
+            <!-- Username -->
             <div class="form-outline ">
-                <input type="text" id="form2Example1" class="form-control rect-box" v-model="uname" />
-                <label class="form-label" for="form2Example1">Username</label>
+                <input type="text" id="uName" class="form-control rect-box" v-model="uname" />
+                <label class="form-label" for="uName">Username</label>
             </div>
 
-            <!-- Password input -->
+            <!-- Password -->
             <div class="form-outline box2">
-                <input type="password" id="form2Example2" class="form-control rect-box" v-model="pword" />
-                <label class="form-label" for="form2Example2">Password</label>
+                <input type="password" id="pWord" class="form-control rect-box" v-model="pword" />
+                <label class="form-label" for="pWord">Password</label>
             </div>
 
-            <!-- Submit button -->
+            <div class="errormessage">{{errorMessage}}</div>
+
             <button type="login" class="btn btn-primary btn-block">Sign in</button>
 
-            <!-- Register buttons -->
+            <!-- Register -->
             <div class=row>
                 <div class="col text-end">
                     <p>Not a member? <a href="#!">Register</a></p>
                 </div>
                 <div class="col text-start">
-                 <!-- Simple link -->
+                 <!-- May be implemented -->
                  <a href="#!">Forgot your password?</a>
                  </div>
             </div>
@@ -53,6 +43,7 @@
 <script>
 
     import auth from '../js/auth';
+    import $ from 'jquery'
     const axios = require('axios').default;
     var qs = require('qs');
     export default {
@@ -61,6 +52,7 @@
             return{
                 uname: "",
                 pword: "",
+                errorMessage: ""
             }
         },
         methods:{
@@ -79,24 +71,36 @@
                     },
                     data : ledata
                 }
-                console.log("name:",this.uname)
-                console.log("pword:",this.pword)
-                console.log(config)
-                axios(config).then(response => console.log("From vue:",response));
-                // axios
-                //     .post('http://localhost:3000/login',config)
-                //     .then(response => console.log("From vue:",response));
-                // auth.login(this.username, this.password, (res) => {
-                //     if (res.auth){
-                //         //Login succesful, go to home page.
-                //         console.log('Login success');
-                //         this.$router.replace('/');
-                //     } else{
-                //         //Login failed.
-                //         console.log('Login failed');
-                //         this.errorMessage = "Login failed";
-                //     }
-                // })
+                // console.log("name:",this.uname)
+                // console.log("pword:",this.pword)
+                // console.log(config)
+                axios(config).then(response => {
+                    if(response.data.includes("successful")){
+                        console.log("login successful")
+                        //save the active user id to session
+                        var ledata2 = {
+                            'username': this.uname,
+                            'password': this.pword 
+                        };
+                        let config2 = {
+                            "url": "http://localhost:3000/",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded"
+                            },
+                            "data" : ledata2
+                        }
+                        $.ajax(config2).done(function (response) {
+                            localStorage.uID = response;
+                        });
+                        //reroute to home
+                        this.$router.replace('/');
+
+                    } else{
+                        console.log("login unsuccessful, need to show error")
+                        this.errorMessage = "Invalid username or password"
+                    }})
             }
         }
     }
@@ -123,6 +127,9 @@
     margin-right: 10%;
 }
 
+.errormessage{
+    color:red;
+}
 
 
 </style>

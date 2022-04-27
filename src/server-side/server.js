@@ -6,6 +6,7 @@ const port = 3000;
 const db = require('./mongoose.js');
 var bodyParser = require('body-parser')
 const bcrypt = require ('bcryptjs');
+const e = require('express');
 
 let app = express();
 
@@ -32,14 +33,18 @@ function userExists(userToFind){
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //retrieve id based on username
-app.get('/', urlencodedParser,function(request, response){
+app.post('/', urlencodedParser,function(request, response){
     console.log(request.body.username)
     console.log(request.body.password)
-    db.User.find({username: request.body.username}).then( r => {
+    if (request.body.username == undefined){
+        console.log("CANNOT GET")
+    } else{
+        db.User.find({username: request.body.username}).then( r => {
             console.log("Result:", r);
             response.send(r[0]._id);
-        }
-    );
+            }
+        );
+    }
 });
 
 app.post('/login', urlencodedParser, function(request, response){
