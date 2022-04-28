@@ -170,17 +170,14 @@ submitBtn.addEventListener('click', () => {
        } else if(score <= 1) {
            quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly! Study more!</h2>
-           <p><img src="../assets/study.png" alt="Get Studying!" width="200" height="200" class="d-inline-block align-text-top"></p>
            <button onclick="location.reload()">Reload</button>`
        } else if(score == 2) {
             quiz.innerHTML = `
             <h2>You answered ${score}/${quizData.length} questions correctly! You're halfway there!</h2>
-            <p><img src="../assets/halfway.png" alt="2/4" width="150" height="200" class="d-inline-block align-text-top"></p>
             <button onclick="location.reload()">Reload</button>`
        } else {
             quiz.innerHTML = `
             <h2>You answered ${score}/${quizData.length} questions correctly! You're a quiz ninja!</h2>
-        <p><img src="../assets/ninja.png" alt="WOW!" width=200" height="200" class="d-inline-block align-text-top"></p>
             <button onclick="location.reload()">Reload</button>`
        }
     }
