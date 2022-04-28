@@ -1,5 +1,7 @@
 # Final Project
 
+Demo video: https://youtu.be/mdqm1ogKc3Q 
+
 ## How to run (in this order)
 ### Server Side (running on localhost:3000)
 This is for the database (mongoose)
@@ -39,4 +41,5 @@ npm run serve
 | :------------------------:|:--------------------------------------:|
 | Ammar Hatiya | [AmmarHatiya](https://github.com/AmmarHatiya) |
 | Naida Tania | [NaidaTania](https://github.com/NaidaTania) |
+| Meghna Krishnan | [meghkris](https://github.com/meghkris) |
 
