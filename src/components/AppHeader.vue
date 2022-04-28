@@ -1,7 +1,7 @@
 <template>
     <div>
         <img alt="Logo" src="../assets/logo.png" class="logo"/>
-        <p :key="user"> Welcome {{this.user}} </p>
+        <p :key="user" > Welcome {{this.user}} </p>
     </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
     name:'AppHeader',
     data(){
         return{
-            user: localStorage.getItem("usrName"),
+            user: localStorage.getItem("usrName") || " to our mini programming lesson!",
         }
     },
 }

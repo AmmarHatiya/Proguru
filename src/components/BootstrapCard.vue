@@ -41,7 +41,7 @@ export default {
         },
         toC(){
             this.$router.replace('/cplusplus');
-        },
+        }
     }
 }
 </script>
