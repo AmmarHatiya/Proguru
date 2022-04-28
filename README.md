@@ -1,5 +1,7 @@
 # Final Project
 
+Demo video: https://youtu.be/mdqm1ogKc3Q 
+
 ## How to run (in this order)
 ### Server Side (running on localhost:3000)
 This is for the database (mongoose)
@@ -31,12 +33,13 @@ npm run serve
 | Node.js | backend API under server-side |
 | Views and/or client-side framework | Vue3 |
 | Database | mongoose |
+| Independent Study| Bash/Xterm [slides](https://docs.google.com/presentation/d/1G4Z-ud6y6aOjYtXWuk3NvYNwPhGX_SvIFHxE9ctLWlY/edit?usp=sharing) |
 
 
 ## Members
 | Group Member Name | GitHub Username (GitHub URL)|
 | :------------------------:|:--------------------------------------:|
 | Ammar Hatiya | [AmmarHatiya](https://github.com/AmmarHatiya) |
-| Meghna Krishnan | [meghkris](https://github.com/meghkris) |
 | Naida Tania | [NaidaTania](https://github.com/NaidaTania) |
+| Meghna Krishnan | [meghkris](https://github.com/meghkris) |
 
