@@ -1,4 +1,4 @@
-# Final Project
+# Programming Lesson (HTML5, CSS3, JS)
 
 Demo video: https://youtu.be/mdqm1ogKc3Q 
 
