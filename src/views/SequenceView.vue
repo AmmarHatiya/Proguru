@@ -1,4 +1,5 @@
 <template>
+<!-- Sequences -->
   <div class="datatypes">
   </div>
 </template>

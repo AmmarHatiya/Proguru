@@ -1,4 +1,5 @@
 <template>
+<!-- DataTypes Lesson Guide: features access to Numeric and String View -->
   <div class="datatypes">
     <DataLessonsCard />
   </div>

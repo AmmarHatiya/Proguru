@@ -1,4 +1,5 @@
 <template>
+<!-- Sidebar for the Numeric -->
   <body id="app">
     <div class="wrapper">
       <!-- Sidebar  -->

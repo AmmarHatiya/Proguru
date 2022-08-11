@@ -1,4 +1,5 @@
 <template>
+<!-- View for Login Page -->
   <div>
     <LoginForm />
     

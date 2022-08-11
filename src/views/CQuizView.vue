@@ -1,4 +1,5 @@
 <template>
+<!-- C++ Quiz View -->
   <div class="side">
     <CQuiz/>
   </div>

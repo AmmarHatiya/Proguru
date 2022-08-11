@@ -1,4 +1,5 @@
 <template>
+<!-- C++ Lesson View-->
   <div class="side">
     <CLesson/>
   </div>

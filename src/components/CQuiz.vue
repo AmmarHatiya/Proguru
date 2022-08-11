@@ -1,4 +1,5 @@
 <template>
+<!-- The quiz template for c++ lesson -->
   <body id="app">
     <div class="wrapper">
       <!-- Page lesson/quiz  -->

@@ -1,4 +1,5 @@
 <template>
+<!-- Component for login logic  -->
     <div>
         <router-link to="/"> Home </router-link> |
         <router-link v-if="!isLoggedIn" to="login"> Login </router-link>

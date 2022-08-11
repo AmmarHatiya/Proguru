@@ -1,4 +1,6 @@
 <template>
+<!-- WORK IN PROGRESS-->
+<!-- Contacts View, So you can add or delete contacts/friends. currently uses json placeholders for sample data -->
   <div  class="contacts">
     <div v-if="!isLoggedIn" >
         Login to access this page. 

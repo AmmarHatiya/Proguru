@@ -1,4 +1,6 @@
 <template>
+<!-- IGNORE -->
+<!-- Template/sample component -->
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>

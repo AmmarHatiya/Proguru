@@ -1,4 +1,5 @@
 <template>
+<!-- View for simulation of shell environment (Bash) -->
     <!-- goal: run a shell script with a press of a button -->
     <div>
         <p> Welcome! This is a mini terminal for you to play around with Bash. 

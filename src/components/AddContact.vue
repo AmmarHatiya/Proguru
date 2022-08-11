@@ -1,4 +1,6 @@
 <template>
+<!-- WORK IN PROGRESS -->
+<!-- Possible ability to Add contacts -->
     <div class="addContact">
     <form @submit="addContact">
     

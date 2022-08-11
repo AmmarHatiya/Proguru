@@ -1,4 +1,5 @@
 <template>
+<!-- Component to display the Login Form on LoginView.vue -->
     <div class="row top">
         <div class="col-sm">
         </div>

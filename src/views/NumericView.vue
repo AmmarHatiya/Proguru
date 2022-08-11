@@ -1,4 +1,5 @@
 <template>
+<!-- View for Numeric Data Types Lesson -->
   <div class="datatypes">
         <NumericSidebar/>
 

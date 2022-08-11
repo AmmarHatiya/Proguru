@@ -1,4 +1,5 @@
 <template>
+<!-- Component for Register form -->
     <div class="row top">
         <div class="col-sm">
         </div>

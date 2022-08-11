@@ -8,10 +8,10 @@
         </div>
     </div>
     <div class="card" @click="toC">
-        <img class="card-img-top img2" src="../assets/placeholder.png" alt="Card image cap">
+        <img class="card-img-top " src="../assets/placeholder.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">C++</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">A brief introduction to C++.</p>
         </div>
     </div>
     <div class="card" @click="toDataTypes">

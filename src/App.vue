@@ -1,4 +1,5 @@
 <template>
+  <!-- Central -->
     <AppHeader />
     <AppNav />
     <router-view />

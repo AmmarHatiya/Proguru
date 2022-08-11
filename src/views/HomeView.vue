@@ -1,4 +1,5 @@
 <template>
+<!-- Home view, access to all Lessons as well as navi bar -->
   <div class="home">
     <BootstrapCard />
     

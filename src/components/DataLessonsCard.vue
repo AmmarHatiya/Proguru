@@ -1,4 +1,5 @@
 <template>
+<!-- Displayed on DataTypesView -->
   <body>
     <div class="welcome-text">
       Welcome to Data Types!

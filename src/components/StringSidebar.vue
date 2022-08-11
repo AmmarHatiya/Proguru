@@ -1,4 +1,5 @@
 <template>
+<!-- DataTypes lesson Sidebar component/feature-->
   <body id="app">
     <div class="wrapper">
       <!-- Sidebar  -->
@@ -169,7 +170,7 @@
 import $ from "jquery";
 import * as d3 from "d3";
 export default {
-  name: "DTSidebar",
+  name: "StringSidebar",
   methods: {},
   mounted: function () {
     document.getElementById("quiz").style.display = "none";

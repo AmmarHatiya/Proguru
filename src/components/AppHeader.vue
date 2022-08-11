@@ -1,4 +1,5 @@
 <template>
+<!-- Component To display header as well as username -->
     <div>
         <img alt="Logo" src="../assets/logo.png" class="logo"/>
         <p :key="user" > Welcome {{this.user}} </p>

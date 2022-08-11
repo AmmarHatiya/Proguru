@@ -1,4 +1,5 @@
 <template>
+<!-- View for Register Form Page -->
   <div>
     <RegisterForm />
     

@@ -1,4 +1,6 @@
 <template>
+<!-- WORK IN PROGRESS -->
+<!--  Component to display all contacts/friends -->
     <div class="ContactsList">
     <table>
         <thead>
