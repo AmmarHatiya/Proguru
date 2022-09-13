@@ -1,6 +1,7 @@
-# Programming Lesson (HTML5, CSS3, JS)
+# Programming Lessons (Vuejs, MongoDB)
 (Repo Duplicated for Showcasing)
 
+Description: Multi Page Application that showcases three fundamental programming lessons (Bash, C++, and Data Types in Python). 
 
 Demo video: https://youtu.be/YJP-NLRBuhY
 
