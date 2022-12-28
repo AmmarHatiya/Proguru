@@ -39,6 +39,12 @@ npm run serve
 | Independent Study| Bash/Xterm [slides](https://docs.google.com/presentation/d/1G4Z-ud6y6aOjYtXWuk3NvYNwPhGX_SvIFHxE9ctLWlY/edit?usp=sharing) |
 
 
+ Login/Register ![Screenshot (2)](https://user-images.githubusercontent.com/45467347/209884149-ef3c47e1-4f5a-4f8d-987a-021424eb70c4.png) 
+ Landing Page  ![Screenshot (3)](https://user-images.githubusercontent.com/45467347/209884214-0f144339-c1f5-4a97-9725-e8888b6c7052.png) 
+ Sample Lesson   ![Screenshot (4)](https://user-images.githubusercontent.com/45467347/209884244-34bfdc8b-508a-4bcc-9221-9f3a96b2abc2.png) 
+ Sample Evaluation   ![Screenshot (5)](https://user-images.githubusercontent.com/45467347/209884282-cc5c8897-dff7-4088-aafc-f13b55f71540.png) 
+ Bash Simulation  ![Screenshot (8)](https://user-images.githubusercontent.com/45467347/209884340-0fa15e1f-95c7-46c6-abc7-8dc074b9aadf.png) 
+
 ## Members
 | Group Member Name | GitHub Username (GitHub URL)|
 | :------------------------:|:--------------------------------------:|
