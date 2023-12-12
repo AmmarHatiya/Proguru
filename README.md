@@ -1,5 +1,5 @@
 # Programming Lessons (Vuejs, MongoDB)
-(Repo Duplicated for Showcasing)
+(Repository Duplicated for Showcasing)
 
 Description: Multi Page Application that showcases three fundamental programming lessons (Bash, C++, and Data Types in Python). 
 
